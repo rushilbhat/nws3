@@ -16,7 +16,7 @@ st.write("Enter the job description below to find devs that best match your job 
 job_description = st.text_area("Job description", height=400)
 
 if st.button("Submit"):
-    openai.api_key = "API_KEY"
+    openai.api_key = st.secrets["API_KEY"]
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
