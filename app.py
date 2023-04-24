@@ -51,6 +51,7 @@ def search_repository_owners(job_description):
     results = response.json()
 
     owners = list(map(lambda item: item["owner"]["html_url"], filter(lambda item: item["owner"]["type"] == "User", results["items"])))
+    owners = list(dict.fromkeys(owners))
 
     return owners
 
