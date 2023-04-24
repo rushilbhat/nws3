@@ -4,7 +4,7 @@ import re
 import openai
 
 def process_job_description(job_description):
-    openai.api_key = "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"
+    openai.api_key = st.secrets["API_KEY"]
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
